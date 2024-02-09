@@ -18,9 +18,9 @@ SHEET_ID = 0
 ROLE = 'writer'
 TYPE = 'user'
 TABLE_HEADER = [
-        ['Отчёт от',],
-        ['Топ проектов по скорости закрытия'],
-        ['Название проекта', 'Время сбора', 'Описание']
+    ['Отчёт от'],
+    ['Топ проектов по скорости закрытия'],
+    ['Название проекта', 'Время сбора', 'Описание']
 ]
 
 
@@ -61,7 +61,7 @@ async def set_user_permissions(
                 'type': TYPE,
                 'role': ROLE,
                 'emailAddress': settings.email
-        }))
+            }))
 
 
 async def spreadsheets_update_value(

@@ -32,7 +32,7 @@ class CRUDCharityProject(CRUDBase):
         """
         projects = await session.scalars(
             select(CharityProject)
-            .where(CharityProject.fully_invested == True).limit(ROW)
+            .where(CharityProject.fully_invested == 1).limit(ROW)
         )
         return sorted(projects.all(), key=sort_key)
 
