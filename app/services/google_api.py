@@ -5,8 +5,8 @@ from aiogoogle import Aiogoogle
 
 from app.core.config import settings
 
-COLUMN = 1
-ROW = 1
+COLUMN = 3
+ROW = 100
 DIMENSION = 'ROWS'
 DATA_MORE_TABLES = (
     'Сохраняемые данные превышают размер таблицы. '
