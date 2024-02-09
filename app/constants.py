@@ -16,5 +16,3 @@ INFO = {
     'auth_provider_x509_cert_url': settings.auth_provider_x509_cert_url,
     'client_x509_cert_url': settings.client_x509_cert_url
 }
-
-ROW = 50

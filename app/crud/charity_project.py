@@ -2,7 +2,6 @@ from typing import Optional
 
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
-from app.constants import ROW
 
 from app.crud.base import CRUDBase
 from app.models import CharityProject
@@ -22,19 +21,15 @@ class CRUDCharityProject(CRUDBase):
         return db_project_id.scalars().first()
 
     async def get_projects_by_completion_rate(
-            self,
-            session: AsyncSession,
-            sort_key=(lambda obj: obj.timedelta)
+        self,
+        session: AsyncSession,
     ) -> list:
-        """
-        Закрытые проекты, отсортированные
-        по скорости сбора средств.
-        """
+        """Список закрытых проектов."""
         projects = await session.scalars(
             select(CharityProject)
-            .where(CharityProject.fully_invested == 1).limit(ROW)
+            .where(CharityProject.fully_invested == 1)
         )
-        return sorted(projects.all(), key=sort_key)
+        return projects.all()
 
 
 charity_project = CRUDCharityProject(CharityProject)
