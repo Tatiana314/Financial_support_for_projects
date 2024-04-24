@@ -10,6 +10,8 @@ API-приложение для сбора финансовой поддержк
 [![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-1.4-blue)](https://docs.sqlalchemy.org/en/20/)
 [![alembic](https://img.shields.io/badge/Alembic-1.7.7-blue)](https://alembic.sqlalchemy.org/en/latest/)
 [![GoogleAPI](https://img.shields.io/badge/GoogleAPI-blue)](https://cloud.google.com/apis/docs/overview)
+[![Pydantic](https://img.shields.io/badge/Pydantic-blue)](https://docs.pydantic.dev/latest/)
+[![Asyncio](https://img.shields.io/badge/Asyncio-blue)](https://docs.python.org/3/library/asyncio.html)
 
 Клонировать репозиторий в командной строке:
 
