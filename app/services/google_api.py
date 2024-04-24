@@ -9,8 +9,8 @@ COLUMN = 3
 ROW = 100
 DIMENSION = 'ROWS'
 DATA_MORE_TABLES = (
-    'Сохраняемые данные превышают размер таблицы. '
-    'Размер таблицы: {column} X {row}; размер данных: {column_table} X {row_table}.'
+    f'Данные превышают размер таблицы.Размер таблицы: {COLUMN} X {ROW}; ' +
+    'размер данных: {column_table} X {row_table}.'
 )
 FORMAT = '%Y/%m/%d %H:%M:%S'
 TABLE_NAME = 'Отчёт от {}'

@@ -1,65 +1,36 @@
-# Приложение QRkot_spreadseets
+# Приложение Financial_support_for_projects
 
-Приложение для Благотворительного фонда поддержки котиков QRKot. 
-Фонд собирает пожертвования на различные целевые проекты: на медицинское обслуживание нуждающихся хвостатых, на обустройство кошачьей колонии в подвале, на корм оставшимся без попечения кошкам — на любые цели, связанные с поддержкой кошачьей популяции.
-Реализована возможность формирования отчёта в гугл-таблице. В таблицу выгружаются данные закрытых проектов, отсортированные по скорости сбора средств: от тех, что закрылись быстрее всего, до тех, что долго собирали нужную сумму.
+API-приложение для сбора финансовой поддержки проектов. Пользователи могут просмотреть список всех проектов, включая необходимые и уже внесенные суммы. Зарегистрированные пользователи могут делать пожертвования и просматривать историю своих пожертвований.
+Реализована возможность формирования отчёта в Google Sheet. В таблицу выгружаются данные закрытых проектов, отсортированные по скорости сбора средств: от тех, что закрылись быстрее всего, до тех, что долго собирали нужную сумму.
 
 
 ## Технологии
-- Python 3.9
-- FastAPI 0.78.0
-- SQLAlchemy 1.4
-- Alembic 1.7.7
-- Google API
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.78.0-blue)](https://fastapi.tiangolo.com/)
+[![Python](https://img.shields.io/badge/python-3.9-blue?logo=python)](https://www.python.org/)
+[![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-1.4-blue)](https://docs.sqlalchemy.org/en/20/)
+[![alembic](https://img.shields.io/badge/Alembic-1.7.7-blue)](https://alembic.sqlalchemy.org/en/latest/)
+[![GoogleAPI](https://img.shields.io/badge/GoogleAPI-blue)](https://cloud.google.com/apis/docs/overview)
 
 Клонировать репозиторий в командной строке:
 
 ```
-git clone git@github.com:Tatiana314/QRkot_spreadsheets.git
+git clone git@github.com:Tatiana314/Financial_support_for_projects.git && sd Financial_support_for_projects
 ```
-Перейти в директорию:
-
-```
-mkdir QRkot_spreadsheets
-```
-
 Cоздать и активировать виртуальное окружение:
-
 ```
-python3 -m venv venv
+python -m venv venv
+Linux/macOS: source env/bin/activate
+windows: source env/scripts/activate
 ```
-
-* Если у вас Linux/macOS
-
-    ```
-    source venv/bin/activate
-    ```
-
-* Если у вас Windows
-
-    ```
-    source venv/scripts/activate
-    ```
-
 Установить зависимости из файла requirements.txt:
-
 ```
-python3 -m pip install --upgrade pip
-```
-
-```
+python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
-
-Создать файл настроек окружения:
-
+В директории Financial_support_for_projects создать и заполнить файл .env:
 ```
 touch .env
-```
 
-Заполнить его:
-
-```
 DATABASE_URI=<sqlite:///db.sqlite3>
 SECRET_KEY=<SECRET_KEY>
 FIRST_SUPERUSER_EMAIL = <EMAIL>
@@ -77,17 +48,12 @@ AUTH_URI = <AUTH_URI>
 TOKEN_URI = <TOKEN_URI>
 AUTH_PROVIDER_X509_CERT_URL = <AUTH_PROVIDER_X509_CERT_URL>
 CLIENT_X509_CERT_URL = <CLIENT_X509_CERT_URL>
-
 ```
-
 Выполнить миграции:
-
 ```
 alembic upgrade head
 ```
-
-Запустить:
-
+Запустить проект:
 ```
 uvicorn app.main:app --reload 
 ```
